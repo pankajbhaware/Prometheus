@@ -32,9 +32,11 @@ cp prometheus /usr/local/bin/
 cp promtool /usr/local/bin/
 
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
+
 sudo chown prometheus:prometheus /usr/local/bin/promtool
 
 cp -r consoles /etc/prometheus/
+
 cp -r console_libraries /etc/prometheus/
 
 sudo chown –R prometheus:prometheus /etc/prometheus
