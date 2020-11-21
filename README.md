@@ -8,11 +8,13 @@ useradd -M -s /bin/false node_exporter
 ## 2) Create two directories:
 ```
 sudo mkdir /etc/prometheus
+
 sudo mkdir /var/lib/prometheus
 ```
 ## 3) Assign the permissions to folder and directories:
 ```
 sudo chown prometheus:prometheus /etc/prometheus
+
 sudo chown prometheus:prometheus /var/lib/prometheus
 ```
 ## 4) Download the Binary:
@@ -36,7 +38,9 @@ cp -r consoles /etc/prometheus/
 cp -r console_libraries /etc/prometheus/
 
 sudo chown –R prometheus:prometheus /etc/prometheus
+
 sudo chown –R prometheus:prometheus /etc/prometheus/consoles
+
 sudo chown –R prometheus:prometheus /etc/prometheus/console_libraries
 
 cp prometheus.yml /etc/prometheus
@@ -70,10 +74,13 @@ WantedBy=multi-user.target
 ## 6) Start and enable Prometheus service:
 ```
 sudo systemctl start prometheus.service
+
 sudo systemctl enable prometheus.service
+
 sudo systemctl status prometheus
 ```
 ## 7) Confirm that port 9090 is listening
 ```
 netstat -tunlp | grep 9090
+
 telnet 127.0.0.1 9090
