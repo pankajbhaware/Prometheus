@@ -17,8 +17,8 @@ sudo chown prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /var/lib/prometheus
 ```
 ## 4) Download the Binary:
-cd /tmp
 ```
+cd /tmp
 wget https://github.com/prometheus/prometheus/releases/download/v2.17.1/prometheus-2.17.1.linux-amd64.tar.gz
 
 tar xvf prometheus-2.17.1.linux-amd64.tar.gz
