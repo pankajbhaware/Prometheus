@@ -2,8 +2,7 @@
 ## 1) Create service account
 ```
 useradd -M -s /bin/false prometheus
-```
-```
+
 useradd -M -s /bin/false node_exporter
 ```
 ## 2) Create two directories:
@@ -27,6 +26,7 @@ tar xvf prometheus-2.17.1.linux-amd64.tar.gz
 cd prometheus-2.17.1.linux-amd64
 
 cp prometheus /usr/local/bin/
+
 cp promtool /usr/local/bin/
 
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
@@ -74,6 +74,6 @@ sudo systemctl enable prometheus.service
 sudo systemctl status prometheus
 ```
 ## 7) Confirm that port 9090 is listening
-
+```
 netstat -tunlp | grep 9090
 telnet 127.0.0.1 9090
