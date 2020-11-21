@@ -9,7 +9,6 @@ useradd -M -s /bin/false node_exporter
 ## 2) Create two directories:
 ```
 sudo mkdir /etc/prometheus
-```
 sudo mkdir /var/lib/prometheus
 
 ## 3) Assign the permissions to folder and directories:
