@@ -10,14 +10,15 @@ useradd -M -s /bin/false node_exporter
 ```
 sudo mkdir /etc/prometheus
 sudo mkdir /var/lib/prometheus
-
+```
 ## 3) Assign the permissions to folder and directories:
+```
 sudo chown prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /var/lib/prometheus
-
+```
 ## 4) Download the Binary:
 cd /tmp
-
+```
 wget https://github.com/prometheus/prometheus/releases/download/v2.17.1/prometheus-2.17.1.linux-amd64.tar.gz
 
 tar xvf prometheus-2.17.1.linux-amd64.tar.gz
@@ -38,7 +39,7 @@ sudo chown –R prometheus:prometheus /etc/prometheus/consoles
 sudo chown –R prometheus:prometheus /etc/prometheus/console_libraries
 
 cp prometheus.yml /etc/prometheus
-
+```
 ## 5)Create systemd unit file:
 
 cd /etc/systemd/system
@@ -66,7 +67,7 @@ Restart=always
 WantedBy=multi-user.target
 
 ## 6) Start and enable Prometheus service:
-
+```
 sudo systemctl start prometheus.service
 sudo systemctl enable prometheus.service
 sudo systemctl status prometheus
