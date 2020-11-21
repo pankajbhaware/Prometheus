@@ -1,6 +1,5 @@
 # Prometheus
 ## 1) Create service account
-* My first repositories on Github 
 ```
 useradd -M -s /bin/false prometheus
 ```
@@ -13,11 +12,11 @@ sudo mkdir /etc/prometheus
 ```
 sudo mkdir /var/lib/prometheus
 
-3) Assign the permissions to folder and directories:
+## 3) Assign the permissions to folder and directories:
 sudo chown prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /var/lib/prometheus
 
-4) Download the Binary:
+## 4) Download the Binary:
 cd /tmp
 
 wget https://github.com/prometheus/prometheus/releases/download/v2.17.1/prometheus-2.17.1.linux-amd64.tar.gz
@@ -41,7 +40,7 @@ sudo chown –R prometheus:prometheus /etc/prometheus/console_libraries
 
 cp prometheus.yml /etc/prometheus
 
-5)Create systemd unit file:
+## 5)Create systemd unit file:
 
 cd /etc/systemd/system
 
@@ -67,13 +66,13 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 
-6) Start and enable Prometheus service:
+## 6) Start and enable Prometheus service:
 
 sudo systemctl start prometheus.service
 sudo systemctl enable prometheus.service
 sudo systemctl status prometheus
 
-7) Confirm that port 9090 is listening
+## 7) Confirm that port 9090 is listening
 
 netstat -tunlp | grep 9090
 telnet 127.0.0.1 9090
