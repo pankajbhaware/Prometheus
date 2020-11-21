@@ -45,7 +45,7 @@ cp prometheus.yml /etc/prometheus
 cd /etc/systemd/system
 
 vi prometheus.service
-
+```
 [Unit]
 Description=Prometheus systemd service unit
 Wants=network-online.target
@@ -65,7 +65,7 @@ SyslogIdentifier=prometheus
 Restart=always
 [Install]
 WantedBy=multi-user.target
-
+```
 ## 6) Start and enable Prometheus service:
 ```
 sudo systemctl start prometheus.service
