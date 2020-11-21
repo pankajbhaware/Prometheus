@@ -71,7 +71,7 @@ WantedBy=multi-user.target
 sudo systemctl start prometheus.service
 sudo systemctl enable prometheus.service
 sudo systemctl status prometheus
-
+```
 ## 7) Confirm that port 9090 is listening
 
 netstat -tunlp | grep 9090
